@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" 
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  
+  <persistence-unit name="MvcDemoPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>example.mvc.model.Fabricante</class>
+    <properties>
+      <!-- Propiedades de conexión a la base de datos -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/EjemploMVC"/>
+      <property name="javax.persistence.jdbc.password" value="JavaDeepCafe"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="mvc"/>
+      <!-- Propiedades de EclipseLink para habilitar el Log de las operaciones -->
+      <!-- Es muy útil para ver por consola las sentencias SQL ejecutadas -->
+      <property name="eclipselink.logging.logger" value="DefaultLogger"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
